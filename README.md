@@ -118,3 +118,44 @@ type Animal = {
   }
 }
 ```
+
+## Project Foldering
+
+```
+back-end-game
+├─ .github
+│  ├─ CODEOWNERS
+│  ├─ ISSUE_TEMPLATE
+│  │  └─ feature_request.md
+│  └─ PULL_REQUEST_TEMPLATE.md
+├─ .gitignore
+├─ README.md
+├─ nodemon.json
+├─ package.json
+├─ src
+│  ├─ config
+│  │  ├─ configSwagger.ts
+│  │  ├─ configWinston.ts
+│  │  └─ index.ts
+│  ├─ controller
+│  ├─ data
+│  │  ├─ database
+│  │  │  └─ configMongoose.ts
+│  │  └─ models
+│  │     ├─ Letter.ts
+│  │     └─ User.ts
+│  ├─ index.ts
+│  ├─ interface
+│  │  ├─ LetterInfo.ts
+│  │  ├─ UserInfo.ts
+│  │  └─ letter
+│  │  └─ user
+│  ├─ service
+│  └─ util
+│     ├─ BaseResponse.ts
+│     ├─ PostBaseResponseDto.ts
+│     ├─ message.ts
+│     └─ statusCode.ts
+├─ tsconfig.json
+└─ yarn.lock
+```
