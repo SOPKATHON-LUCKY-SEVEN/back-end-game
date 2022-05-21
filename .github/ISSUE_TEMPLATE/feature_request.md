@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: *23# Feature Request
+about: "*23#" Feature Request
 title: ''
 labels: ''
 assignees: ''
