@@ -1,4 +1,7 @@
 import mongoose from "mongoose";
+import config from "../../config";
+import Letter from "../models/Letter";
+import User from "../models/User";
 
 const configMongoose = async () => {
   if (process.env.MODE_ENV !== "production") {
@@ -6,9 +9,8 @@ const configMongoose = async () => {
   }
 
   mongoose.connect(
-    "",
+    config.mongoURI,
     {
-      // dbname: 'DBName'
       autoCreate: true,
     },
     (error) => {
@@ -20,7 +22,12 @@ const configMongoose = async () => {
     }
   );
 
-  // TODO Collection Create Logic
+  User.createCollection().then(function (collection) {
+    console.log("User Collection is Created");
+  });
+  Letter.createCollection().then(function (collection) {
+    console.log("Letter Collection is Created");
+  });
 };
 
 mongoose.connection.on("error", (error) => {

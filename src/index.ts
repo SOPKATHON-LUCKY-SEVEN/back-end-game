@@ -7,6 +7,8 @@ import configMongoose from "./data/database/configMongoose";
 
 const app = express();
 
+require("dotenv").config();
+
 configMongoose();
 
 app.set("port", process.env.PORT || 3000);
