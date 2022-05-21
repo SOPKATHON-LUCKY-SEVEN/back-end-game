@@ -15,6 +15,9 @@ const message = {
   READ_REVIEW_SUCCESS: "리뷰 조회 성공",
   NULL_VALUE_TOKEN: "토큰 없음",
   INVALID_TOKEN: "토큰 만료",
+
+  // 편지
+  CREATE_LETTER_SUCCESS: "편지 작성 성공",
 };
 
 export default message;
