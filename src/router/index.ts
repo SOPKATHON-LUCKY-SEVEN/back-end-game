@@ -1,4 +1,5 @@
 import { Router } from "express";
+import LetterRouter from "./LetterRouter";
 
 const router: Router = Router();
 
@@ -7,5 +8,6 @@ const router: Router = Router();
  *
  * router.use('/example', ExampleRouter)
  */
+router.use("/letter", LetterRouter);
 
 export default router;
