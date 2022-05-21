@@ -1,3 +1,6 @@
 import LetterService from "./LetterService";
+import UserService from "./UserService";
 
-export { LetterService };
+export { 
+    LetterService, UserService 
+};
