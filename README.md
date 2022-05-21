@@ -1,6 +1,11 @@
-# NodeTemplate
+# SOPKATHON Backend
 
-## package.json
+## Contributor
+
+- [Nunu](https://github.com/l2hyunwoo)
+- [Chae-n]()
+
+## Dependency
 
 ```json
 {
@@ -35,4 +40,3 @@
   }
 }
 ```
-
