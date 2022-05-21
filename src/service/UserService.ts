@@ -1,5 +1,6 @@
 import { PostBaseResponseDto } from "../util/PostBaseResponseDto";
 import { UserCreateDto } from "../interface/user/UserCreateDto";
+import { UserResponseDto } from "../interface/user/UserResponseDto";
 import User from "../data/models/User";
 
 const createUser = async (userCreateDto: UserCreateDto): Promise<PostBaseResponseDto | null> => {
@@ -27,4 +28,22 @@ const createUser = async (userCreateDto: UserCreateDto): Promise<PostBaseRespons
   }
 };
 
-export default { createUser };
+const getUsers = async (userId: string): Promise<UserResponseDto[] | null> => {
+  try {
+      const user = await User.findById(userId);
+      
+      if (!user) {
+          return null;
+      }
+
+      const data = await User.find();
+
+      return data;
+  } catch (error) {
+      console.log(error);
+      throw error;
+  }
+}
+
+
+export default { createUser, getUsers };
