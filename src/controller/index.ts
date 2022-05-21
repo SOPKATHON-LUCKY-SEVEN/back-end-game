@@ -1,5 +1,7 @@
 import UserController from "./UserController";
+import LetterController from "./LetterController";
 
 export {
-    UserController
+    UserController,
+    LetterController
 }

@@ -20,6 +20,7 @@ app.use(express.json());
 app.use(router);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
 
+app.use(router);
 interface ErrorType {
   message: string;
   statusCode: number;
