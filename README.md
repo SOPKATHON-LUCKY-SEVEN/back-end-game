@@ -212,3 +212,7 @@ back-end-game
 ├─ tsconfig.json
 └─ yarn.lock
 ```
+
+## API 명세서
+
+[LINK](https://www.notion.so/0dbd11e6032842d7b82182338697ec5e)
