@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import { validationResult } from "express-validator";
 import LetterCreateDto from "../interface/letter/LetterCreateDto";
 import { LetterService } from "../service";
 import BaseResponse from "../util/BaseResponse";
@@ -6,6 +7,14 @@ import message from "../util/message";
 import statusCode from "../util/statusCode";
 
 const createLetter = async (req: Request, res: Response) => {
+  console.log(`body ${req.body}`);
+  const error = validationResult(req);
+  if (!error.isEmpty()) {
+    return res
+      .status(statusCode.BAD_REQUEST)
+      .send(BaseResponse.fail(statusCode.BAD_REQUEST, message.BAD_REQUEST));
+  }
+
   const letterCreateDto: LetterCreateDto = req.body;
 
   try {

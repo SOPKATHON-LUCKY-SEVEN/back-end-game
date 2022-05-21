@@ -4,6 +4,7 @@ import swaggerUi from "swagger-ui-express";
 import config from "./config";
 import swaggerSpecs from "./config/configSwagger";
 import configMongoose from "./data/database/configMongoose";
+import router from "./router";
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
 
+app.use(router);
 interface ErrorType {
   message: string;
   statusCode: number;
