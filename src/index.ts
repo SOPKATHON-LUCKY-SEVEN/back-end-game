@@ -4,6 +4,7 @@ import swaggerUi from "swagger-ui-express";
 import config from "./config";
 import swaggerSpecs from "./config/configSwagger";
 import configMongoose from "./data/database/configMongoose";
+import router from "./router";
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.set("port", process.env.PORT || 3000);
 app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(router);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
 
 interface ErrorType {

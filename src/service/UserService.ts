@@ -2,7 +2,7 @@ import { PostBaseResponseDto } from "../util/PostBaseResponseDto";
 import { UserCreateDto } from "../interface/user/UserCreateDto";
 import User from "../data/models/User";
 
-const createUser= async (userCreateDto: UserCreateDto): Promise<PostBaseResponseDto | null> => {
+const createUser = async (userCreateDto: UserCreateDto): Promise<PostBaseResponseDto | null> => {
   try {
     const existUser = await User.findOne({
         phoneNumber: userCreateDto.phoneNumber
@@ -17,7 +17,7 @@ const createUser= async (userCreateDto: UserCreateDto): Promise<PostBaseResponse
     await user.save();
 
     const data = {
-      _id: user._id,
+      _id: user._id
     };
 
     return data;
