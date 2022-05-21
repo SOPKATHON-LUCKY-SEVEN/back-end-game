@@ -1,6 +1,9 @@
 # *23#
 
-미뤄두었던 당신의 감사함을 표하세요
+> 부끄러워서 전하지 못했던 감사의 마음을 익명으로 전달하는 서비스
+>
+> 친구/가족/연인에게 고마움을 전달해서
+> 평범했던 서로의 일상에 밝은 별이 되어주세요
 
 ## Contributor
 
@@ -83,6 +86,52 @@ type Animal = {
 <img src="https://user-images.githubusercontent.com/54518925/103665498-d5877a80-4fb6-11eb-81ad-de0c1a577083.png" width="40%" />
 <img src="https://user-images.githubusercontent.com/54518925/103665503-d6b8a780-4fb6-11eb-9786-9b97bc83ceda.png" width="40%" />
 
+## MongoDB Collection
+
+### User
+
+```typescript
+const UserSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  phoneNumber: {
+    type: String,
+    required: true,
+  },
+  letters: [
+    {
+      letter: {
+        type: mongoose.Types.ObjectId,
+        required: true,
+        ref: "Letter",
+      },
+    },
+  ],
+});
+```
+
+### Letter
+
+```typescript
+const LetterSchema = new mongoose.Schema({
+  content: {
+    type: String,
+    required: true,
+  },
+  sender: {
+    type: String,
+    required: true,
+  },
+  receiver: {
+    type: mongoose.Types.ObjectId,
+    required: true,
+    ref: "User",
+  },
+});
+```
+
 ## Dependency
 
 ```json
@@ -118,6 +167,10 @@ type Animal = {
   }
 }
 ```
+
+## Architecture
+
+<img src="https://user-images.githubusercontent.com/54518925/169666952-072520f2-54f3-4288-ad4d-b9af5e594ae2.png" />
 
 ## Project Foldering
 
