@@ -9,6 +9,8 @@ const message = {
   CREATE_USER_SUCCESS: "유저 생성 성공",
   DELETE_USER_SUCCESS: "유저 삭제 성공",
   UPDATE_USER_SUCCESS: "유저 삭제 성공",
+  UPDATE_USER_SUCCEss: "유저 삭제 성공",
+  DUPLICATED: "중복된 유저",
 
   // 리뷰
   READ_LETTER_SUCCESS: "편지 조회 성공",
